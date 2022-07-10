@@ -17,3 +17,11 @@
 详细结果可见[wandb](https://wandb.ai/polowitty/snn?workspace=user-polowitty)
 
 mnist数据集上最高99.28%，fashionMnist数据集上最高92.37%，均为conv_snn达到
+
+fashionMnist数据集上结果：
+
+![](asset/fashionMnist_res.png)
+
+mnist数据集上结果：
+
+![](asset/mnist_res.png)
