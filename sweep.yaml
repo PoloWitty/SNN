@@ -1,0 +1,39 @@
+program: main.py
+project: snn
+method: random
+metric:
+  name: test_accuracy
+  goal: maximize
+parameters:
+  batch_size:
+    values: [64,128,256,512]
+  epochs:
+    min: 10
+    max: 30
+  lr:
+    min: 0.0001
+    max: 0.01
+  dataset: 
+    values: ['mnist','fashionMnist']
+  optimizer:
+    values: ['adam', 'rmsProp','adaGrad']
+  loss_func:
+    values: ['mse','ce']
+  model:
+    values: ['model0','model1','model2']
+  T:
+   min: 5
+   max: 20
+early_terminate:
+  type: hyperband
+  min_iter: 5
+  eta: 2
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - "--device"
+  - "cuda"
+  - "--wandb"
+  - "True"
+  - ${args}
